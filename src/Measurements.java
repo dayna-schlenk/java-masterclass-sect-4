@@ -17,4 +17,17 @@ public class Measurements {
 
         return -1;
     }
+
+    // Method overloading
+    public int calcFeetAndInchesToCentimeters(int inches) {
+        if (inches >= 0) {
+            // calculate how many feet are in inches
+            int feetInInches = Math.round(inches / 12);
+
+            // call first method
+            calcFeetAndInchesToCentimeters(feetInInches, inches);
+        }
+
+        return -1;
+    }
 }

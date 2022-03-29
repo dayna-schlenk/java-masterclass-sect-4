@@ -3,5 +3,7 @@ public class App {
         Measurements measure = new Measurements();
 
         System.out.println(measure.calcFeetAndInchesToCentimeters(2, 8));
+
+        System.out.println(measure.calcFeetAndInchesToCentimeters(38));
     }
 }
