@@ -44,4 +44,18 @@ public class Measurements {
             return centimeters;
         }
     }
+
+    // Method overloading
+    public double calcFeetAndInchesToCentimeters(double inches) {
+        // Validate
+        if (inches < 0) {
+            return -1;
+        } else {
+            // Convert inches to feet & get remainder of inches
+            double feet = (int) inches / 12;
+            double remainingInches = (int) inches % 12;
+            System.out.println(inches + " inches is equal to " + feet + " feet, and " + remainingInches + " remaining inches.");
+            return calcFeetAndInchesToCentimeters(feet, remainingInches);
+        }
+    }
 }
