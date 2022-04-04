@@ -43,14 +43,21 @@ public class SecAndMin {
     }
 
     // Method overloading
-    // public String getDurationString(int seconds) {
-    //     // Validate
-    //     if (seconds >= 0) {
-    //         // Calculate how many minutes are in the seconds value
+    public String getDurationString(int seconds) {
+        int minInSec = 0;
+        int remainingSec = 0;
 
-    //         // Call the other overloaded method, passing the correct minutes & seconds calculated so that it can work properly
-    //     } else {
-    //         return "Invalid value";
-    //     }
-    // }
+        // Validate
+        if (seconds >= 0) {
+            // Calculate how many minutes are in the seconds value
+            minInSec = seconds / 60;
+            remainingSec = seconds % 60;
+
+            // Call the other overloaded method, passing the correct minutes & seconds calculated so that it can work properly
+            return getDurationString(minInSec, remainingSec);
+
+        } else {
+            return "Invalid value";
+        }
+    }
 }
