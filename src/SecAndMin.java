@@ -5,26 +5,40 @@
 */
 
 public class SecAndMin {
-    // public String getDurationString(int minutes, int seconds) {
-    //     int totalSeconds;
-    //     int hours;
-    //     int min;
-    //     int sec;
+    public String getDurationString(int minutes, int seconds) {
+        int totalSeconds;
+        int newHours = 0;
+        int newMinutes = 0;
 
-    //     // Validate
-    //     if ((minutes >= 0) || ((seconds >= 0) && (seconds <= 59))) {
-    //         totalSeconds = (minutes * 60) + seconds;
+        // Validate
+        if ((minutes >= 0) || ((seconds >= 0) && (seconds <= 59))) {
+            totalSeconds = (minutes * 60) + seconds;
 
-    //         if (totalSeconds >= 3600) {
-    //             min = totalSeconds / 60;
-    //         }
+            if (totalSeconds >= 3600) {
+                newHours = totalSeconds / 3600;
+                totalSeconds %= 3600;
 
-    //         // Return as a String, formatted like so: XXh YYm ZZs (num hours, num minutes, & num seconds)
-    //         return hours + "h " + min + "m " + sec + "s";
-    //     } else {
-    //         return "Invalid value";
-    //     }
-    // }
+                if (totalSeconds>= 60) {
+                    newMinutes = totalSeconds / 60;
+                    totalSeconds %= 60;
+                }
+
+            } else if (totalSeconds < 3600 && totalSeconds >= 60) {
+                newHours = 0;
+                newMinutes = totalSeconds / 60;
+                totalSeconds %= 60;
+
+            } else if (totalSeconds < 60) {
+                newHours = 0;
+                newMinutes = 0;
+            }
+
+            return newHours + "h " + newMinutes + "m " + totalSeconds + "s";
+
+        } else {
+            return "Invalid value";
+        }
+    }
 
     // Method overloading
     // public String getDurationString(int seconds) {
