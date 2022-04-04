@@ -4,6 +4,8 @@
 -> 1 hour = 60 minutes (or 3600 seconds)
 */
 
+// MY SOLUTION
+
 public class SecAndMin {
     public String getDurationString(int minutes, int seconds) {
         int totalSeconds;
