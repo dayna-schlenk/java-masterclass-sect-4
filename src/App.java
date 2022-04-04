@@ -4,8 +4,9 @@ public class App {
         // System.out.println(myTry.getDurationString(170, 45));
 
         // Testing...
-        int minutes = 70;
+        int minutes = 0;
         int seconds = 34;
+
         int totalSeconds = (minutes * 60) + seconds;
         System.out.println("Total seconds: " + totalSeconds);
 
@@ -25,16 +26,21 @@ public class App {
             }
 
             System.out.println("Remaining seconds: " + remainingSeconds);
+
+        } else if (totalSeconds < 3600 && totalSeconds >= 60) {
+            newHours = 0;
+            System.out.println("New hours: " + newHours);
+            newMinutes = totalSeconds / 60;
+            System.out.println("New minutes: " + newMinutes);
+            remainingSeconds = totalSeconds % 60;
+            System.out.println("Remaining seconds: " + remainingSeconds);
+            
+        } else if (totalSeconds < 60) {
+            newHours = 0;
+            newMinutes = 0;
+            System.out.println("New hours: " + newHours);
+            System.out.println("New minutes: " + newMinutes);
+            System.out.println("Remaining seconds: " + totalSeconds);
         }
-        
-        // if (totalSeconds >= 60) {
-        //     System.out.println("Not enough seconds to make an hour.");
-        //     newMinutes = totalSeconds / 60;
-        //     System.out.println("New minutes: " + newMinutes);
-        // }
-        
-        // if (totalSeconds < 60) {
-        //     System.out.println("Seconds: " + totalSeconds);
-        // }
     }
 }
