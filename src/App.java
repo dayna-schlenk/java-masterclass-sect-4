@@ -9,6 +9,8 @@ public class App {
         System.out.println(myTry2.getDurationString(65, 45));
 
         // MY SOLUTION
+        SecAndMin daynaTry2 = new SecAndMin();
+        System.out.println(daynaTry2.getDurationString(3945));
 
         // INSTRUCTOR SOLUTION
         SecAndMin2 instructorTry2 = new SecAndMin2();
