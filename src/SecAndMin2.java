@@ -18,7 +18,14 @@ public class SecAndMin2 {
     }
 
     // Method overloading
-    // public String getDurationString(long seconds) { // int is okay as well
-    //     // code
-    // }
+    public String getDurationString(long seconds) { // int is okay as well
+        if (seconds < 0) {
+            return "Invalid value";
+        }
+
+        long minutes = seconds / 60;
+        long remainingSeconds = seconds % 60;
+
+        return getDurationString(minutes, remainingSeconds);
+    }
 }
