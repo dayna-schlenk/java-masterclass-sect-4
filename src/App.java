@@ -1,5 +1,7 @@
 public class App {
     public static void main(String[] args) {
-        // code
+        MinToYearsAndDays myTry = new MinToYearsAndDays();
+
+        myTry.printYearsAndDays(-1);
     }
 }
