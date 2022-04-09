@@ -1,6 +1,6 @@
 public class App {
     public static void main(String[] args) {
-        EqualityPrinter myTry = new EqualityPrinter();
-        myTry.printEqual(2, 1, 1);
+        PlayingCat myTry = new PlayingCat();
+        System.out.println(myTry.isCatPlaying(false, 35));
     }
 }
