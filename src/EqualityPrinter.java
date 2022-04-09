@@ -9,12 +9,11 @@ public class EqualityPrinter {
         } else {
             if ((xNum.compareTo(yNum) == 0) && (xNum.compareTo(zNum) == 0)) {
                 System.out.println("All numbers are equal");          
+            } else if ((xNum.compareTo(yNum) == 0) || (xNum.compareTo(zNum) == 0) || (zNum.compareTo(yNum) == 0)) {
+                System.out.println("Neither all are equal or different");
             } else {
                 System.out.println("All numbers are different");
             }
-
-            // Otherwise...
-            // System.out.println("Neither are all equal or different");
         }
     }
 }
